@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Session-Based Authentication in NestJS with Redis, with passwordless OTP, enables secure and scalable user sessions by storing session data in Redis and authenticating users via one-time passwords (OTP) instead of traditional passwords.
 
 ## Project setup
 
