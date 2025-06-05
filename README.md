@@ -28,8 +28,45 @@
 
 ## Project setup
 
+Create .env.development in your root directory
+```dotenv
+APP_PORT=8001
+
+ALLOWED_ORIGIN=http://localhost:3001
+
+COOKIE_SECRET=secret
+SESSION_SECRET=secret
+SESSION_NAME=session_auth
+SESSION_DOMAIN=localhost
+SESSION_MAX_AGE=86400000
+SESSION_HTTP_ONLY=false
+SESSION_SECURE=false
+SESSION_FOLDER=sessions_dev:
+SESSION_SAME_SITE=lax
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres123
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=db_backend
+POSTGRES_URI=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+
+REDIS_PASSWORD=redis123
+REDIS_HOST=redis
+REDIS_PORT=6379
+REDIS_URI=redis://default:redis123@redis:6379
+```
+
 ```bash
 $ yarn install
+```
+
+```bash
+$ docker compose --env-file .env.development build
+```
+
+```bash
+$ docker compose --env-file .env.development up --watch
 ```
 
 ## Compile and run the project
